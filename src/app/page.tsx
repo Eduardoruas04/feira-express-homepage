@@ -1,54 +1,29 @@
-import Link from "next/link";
+import Head from "next/head";
+import styles from "~/styles/Home.module.css";
 
-import { LatestPost } from "~/app/_components/post";
-import { api, HydrateClient } from "~/trpc/server";
-import styles from "./index.module.css";
-
-export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
-
-  void api.post.getLatest.prefetch();
-
+export default function Home() {
   return (
-    <HydrateClient>
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>
-            Create <span className={styles.pinkSpan}>T3</span> App
-          </h1>
-          <div className={styles.cardRow}>
-            <Link
-              className={styles.card}
-              href="https://create.t3.gg/en/usage/first-steps"
-              target="_blank"
-            >
-              <h3 className={styles.cardTitle}>First Steps →</h3>
-              <div className={styles.cardText}>
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
-              </div>
-            </Link>
-            <Link
-              className={styles.card}
-              href="https://create.t3.gg/en/introduction"
-              target="_blank"
-            >
-              <h3 className={styles.cardTitle}>Documentation →</h3>
-              <div className={styles.cardText}>
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
-              </div>
-            </Link>
-          </div>
-          <div className={styles.showcaseContainer}>
-            <p className={styles.showcaseText}>
-              {hello ? hello.greeting : "Loading tRPC query..."}
-            </p>
-          </div>
+    <>
+      <Head>
+        <title>Feira Express</title>
+        <meta name="description" content="Encontre produtos na feira perto de você" />
+      </Head>
 
-          <LatestPost />
+      <header className={styles.header}>
+        <h1 className={styles.logo}>Feira Express</h1>
+        <button className={styles.loginBtn}>Login</button>
+      </header>
+
+      <main className={styles.main}>
+        <div className={styles.background}></div>
+        <div className={styles.overlay}></div>
+
+        <div className={styles.content}>
+          <h2 className={styles.title}>ENCONTRE PRODUTOS NA FEIRA PERTO DE VOCÊ</h2>
+          <p className={styles.subtitle}>COMECE COLOCANDO SUA LOCALIZAÇÃO</p>
+          <input type="text" placeholder="Localização" className={styles.input} />
         </div>
       </main>
-    </HydrateClient>
+    </>
   );
 }
