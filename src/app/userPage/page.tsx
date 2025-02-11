@@ -58,7 +58,7 @@ export default function UserPage() {
                         </div>
                     </form>
                     <div className={styles.button}>
-                    <button className={styles.btnSalvarAlteracoes}>Salvar alterações</button>
+                        <button className={styles.btnSalvarAlteracoes}>Salvar alterações</button>
                     </div>
                 </section>
 
@@ -82,19 +82,21 @@ export default function UserPage() {
                     <div className={styles.products}>
                         <div className={styles.product}>
                             <Image
-                                src="/vrum-vrum.jpg"
-                                alt="Vrum vrum"
+                                src="/Escova.jpg"
+                                alt="Escova"
                                 width={100}
                                 height={100}
+                                className={styles.img}
                             />
-                            <p>Vrum vrum</p>
+                            <p>Escova de Careca</p>
                             <p>⭐⭐⭐⭐</p>
                             <p>$145</p>
                         </div>
                     </div>
                 </section>
-
-                <button className={styles.btnBanca}>Ir para minha banca</button>
+                <div className={styles.buttonDiv}>
+                    <button className={styles.btnBanca}>Ir para minha banca</button>
+                </div>
             </div>
         </>
     );
