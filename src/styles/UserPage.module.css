@@ -1,15 +1,14 @@
-
 .container {
     background: white;
     padding: 20px;
-    text-align:start;
+    text-align: start;
     width: 90%;
 }
 
 .userTitle {
     display: flex;
     justify-content: flex-start;
-    
+
 }
 
 .avatar {
@@ -29,16 +28,50 @@
     align-content: center;
 }
 
-.email {
-    color: gray;
+.editForm {
+    display: inline-flex;
+    flex-wrap: wrap;
+
 }
 
-.bio {
-    margin-top: 10px;
-    font-size: 14px;
+.editForm input {
+    display: block;
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    justify-self: flex-start;
 }
 
-.btn-edit {
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnSalvarAlteracoes {
+    margin-top: 15px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #57C800;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnBanca {
     margin-top: 15px;
     padding: 10px 20px;
     border: none;
@@ -47,6 +80,31 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.reviewsSection,
+.historySection {
+    margin-bottom: 2rem;
+}
+
+.review {
+    margin-bottom: 2rem;
+    border: 2px solid gray;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 20%;
+    text-wrap: wrap;
+}
+
+
+.reviews .review,
+.products .product {
+    margin-bottom: 1rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -54,20 +112,26 @@
         flex-direction: column;
         padding: 20px;
     }
+
     .container {
         width: 90%;
     }
+
     .avatar {
         width: 80px;
         height: 80px;
     }
+
     .name {
         font-size: 18px;
     }
-    .email, .bio {
+
+    .email,
+    .bio {
         font-size: 12px;
     }
-    .btn-edit {
+
+    .btnBanca {
         padding: 8px 16px;
     }
 }
@@ -76,21 +140,27 @@
     body {
         padding: 10px;
     }
+
     .container {
         width: 95%;
         padding: 15px;
     }
+
     .avatar {
         width: 70px;
         height: 70px;
     }
+
     .name {
         font-size: 16px;
     }
-    .email, .bio {
+
+    .email,
+    .bio {
         font-size: 10px;
     }
-    .btn-edit {
+
+    .btnBanca {
         padding: 6px 12px;
     }
 }
